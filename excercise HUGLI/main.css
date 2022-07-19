@@ -1,0 +1,63 @@
+a{
+    display: block;
+    color:black
+}
+
+h1,a{
+    background-color: aqua;
+    text-align: center;
+    color: brown;
+}
+
+input::placeholder{
+    color: pink;
+    background-color: black;
+    font-size: 30px;
+}
+
+.reset-styling-a{
+    display:inline;
+    color: blue;
+    background-color: transparent;
+    text-align: right;
+}
+
+.label {
+    font-size: 40px;
+    font-weight: 900;
+    color: blue;
+    background-color: yellow;
+    border: 4px solid rgb(232, 59, 59)
+} 
+
+.warning-label{
+    color: red;
+}
+.name-label2{
+    font-size: 20px;
+}
+
+
+.name-label{
+    font-size: 80px;
+}
+
+
+.avi{
+    color:green
+}
+
+.birthdate{
+    transition: ease-in-out all 1.5s;
+    
+}
+
+.birthdate:hover{
+    transition: ease-in-out all 0.5s;
+    font-size: 70px;
+    color: gold;
+}
+
+.box{
+    border: 10px solid black;
+}
