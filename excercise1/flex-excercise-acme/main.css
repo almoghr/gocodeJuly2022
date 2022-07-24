@@ -1,0 +1,108 @@
+*, html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.firstSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 500px;
+    background:url("https://static.pexels.com/photos/248515/pexels-photo-248515.png");
+    background-repeat: no-repeat;
+    background-size: cover;  
+    /* background-size: cover = when you want the picture to cover the whole width of the container */
+}
+ 
+/* em = font-size of the father * the numbers of em you want  */
+/* rem = 16px */
+
+
+.firstSection-header, .firstSection-par, .readMoreBtn{
+    margin: 1rem 0;
+}
+
+.firstSection-par{
+    width: 35%;
+    text-align: center;
+    font-weight: 500 ;
+}
+
+.readMoreBtn{
+    background-color: #333;
+    border: 1px solid #666;
+    color:white;
+    padding: 1em 2em;
+}
+
+.readMoreBtn:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.secondSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #eaeaea;
+}
+
+.secondSection-header{
+    margin: 2rem 0;
+}
+
+/* margin-first way - 4 digits: 10px 10px 5px 8px = top, right, bottom, left */
+/* margin-second way - 2 digits 1rem 0 = top+bottom, right+left */
+/* margin-third way 1 digit 1rem = 1 rem for all of the sides */
+
+.secondSection-par-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.secondSection-par{
+    width: 20%;
+    text-align: center;
+}
+
+.thirdSection{
+    background-color: #333;
+    height: 550;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.thirdSection-card{
+    width: 250px;
+    padding: 2rem .7rem;
+    min-height: 80%;
+
+}
+
+.thirdSection-card-info{
+    background-color: white;
+    color: black;
+    margin-top:-4px;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.thirdSection-card-info-par{
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+
