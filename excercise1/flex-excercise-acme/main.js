@@ -126,3 +126,23 @@
 // } 
 
 // oneFuncToRuleThemAll(addition, multiple)
+
+
+// const num1 = parseInt(prompt('תן לי מספר'))
+// const num2 = parseInt(prompt('תן לי מספר שני'))
+// const num3 = parseInt(prompt('תן לי מספר שלישי'))
+
+// const numbers = (number1, number2, number3) => {
+//     let high = number1;
+//     // high = (num2 > high ? num2 : high);
+//     // high = (num3 > high ? num3 : high);
+    
+//     if(high < number2) {
+//         high = number2;
+//     } 
+//     if(high < number3) {
+//         high = number3;
+//     }
+//     console.log(high);
+// }
+// numbers(num1, num2, num3)
