@@ -25,7 +25,7 @@ input::placeholder{
 .label {
     font-size: 40px;
     font-weight: 900;
-    color: blue;
+    color: #0000ff;
     background-color: yellow;
     border: 4px solid rgb(232, 59, 59)
 } 
@@ -33,6 +33,11 @@ input::placeholder{
 .warning-label{
     color: red;
 }
+
+.s  uccess-label{
+    color:green
+}
+
 .name-label2{
     font-size: 20px;
 }
@@ -60,4 +65,54 @@ input::placeholder{
 
 .box{
     border: 10px solid black;
+}
+.container{
+    font-size: 80px;
+    
+}
+.container-img{
+    min-width: 300px;
+    max-width: 300px;
+}
+
+
+
+.circle{
+    width: 180px;
+    height: 180px;
+    border: 3px solid red;
+    border-radius: 50%;
+    background-image: url("https://www.tradeinn.com/f/13805/138057903/minions-babble-otto.jpg");
+    background-size: contain;
+}
+
+.mini-circle{
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50% ;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+/* @media screen and (max-width: 630px){
+    .container-img{
+        width: 100%;
+    }
+} */
+
+@media screen and (max-width:330px) and (min-width:200px){
+    .hug-title{
+        font-size: 80px;
+    }
+    .container-img{
+        width: 100%;
+        min-width: initial;
+        /* max-width: 100%; */
+    }
+    a{
+        font-size: 50px;
+    }
+
 }
