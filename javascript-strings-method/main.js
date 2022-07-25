@@ -58,5 +58,9 @@ const trimmedStr = weirdStr.trim();
 
 console.log(trimmedStr);
 
+const newName = 'almog'
+console.log(newName.startsWith('al'))
+console.log(newName.startsWith('alm'))
+console.log(newName.startsWith('ao'))
 
 
