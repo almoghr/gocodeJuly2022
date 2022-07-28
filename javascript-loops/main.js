@@ -27,7 +27,7 @@ for(let j = 1; j < 11; j++){
 // לולאת WHILE
 
 let tnay = 0
-while(tnay < 18){
+while(tnay > 18){
     console.log('congragulations you are now ' + tnay + ' years old')
     tnay++
 }
