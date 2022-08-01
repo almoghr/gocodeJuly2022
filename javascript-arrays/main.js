@@ -124,3 +124,5 @@ const newNumbers = numbers.map((number) => {
 
 console.log(newNumbers)
 console.log(numbers)
+
+
