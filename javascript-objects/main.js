@@ -52,3 +52,4 @@ const createCatsAndCheckName = () => {
 }
 
 createCatsAndCheckName()
+console.log('moshe here is targil 6!!!!!')
