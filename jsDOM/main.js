@@ -64,12 +64,31 @@ myBtn.innerText='alert my value please'
 //     console.log(e)
 //     myInp2.value = e.target.value
 // })
-myBtn.addEventListener('click', () => {
-    header2.innerText = myInp.value
-    alert('this is my value ' + myInp.value + ' ' + myInp2.value)
-})
+// myBtn.addEventListener('click', () => {
+//     header2.innerText = myInp.value
+//     alert('this is my value ' + myInp.value + ' ' + myInp2.value)
+// })
 
-document.body.appendChild(myInp)
-document.body.appendChild(myInp2)
-document.body.appendChild(myBtn)
-document.body.appendChild(header2)
+// document.body.appendChild(myInp)
+// document.body.appendChild(myInp2)
+// document.body.appendChild(myBtn)
+// document.body.appendChild(header2)
+
+const ul = document.createElement('ul')
+const numArr = [1,2,3,4,5,6,7,8,9,10]
+    numArr.forEach((number) => {
+        const li = document.createElement('li')
+        const deleteButton = document.createElement('button')
+
+        li.innerText=number
+        deleteButton.innerText="delete " + number
+
+        deleteButton.addEventListener('click', () => {
+            li.parentElement.removeChild(li)
+            deleteButton.parentElement.removeChild(deleteButton)
+        })
+
+        ul.appendChild(li)
+        ul.appendChild(deleteButton)
+    })
+document.body.appendChild(ul)
