@@ -1,9 +1,9 @@
-const todoInput = document.createElement("input");
-const tabContainer = document.createElement("div");
-const todosTab = document.createElement("button");
-const doneTab = document.createElement("button");
-const todosContainer = document.createElement("div");
-const colorSwitcher = document.createElement("button");
+  const todoInput = document.createElement("input");
+  const tabContainer = document.createElement("div");
+  const todosTab = document.createElement("button");
+  const doneTab = document.createElement("button");
+  const todosContainer = document.createElement("div");
+  const colorSwitcher = document.createElement("button");
 
 const unDoneTodos = [];
 const doneTodos = [];
@@ -16,12 +16,11 @@ colorSwitcher.innerText = "toggle color";
 
 const renderTodos = (whichTab) => {
   console.log(whichTab);
-  const currentTodosArr = whichTab === "unDone" ? unDoneTodos : doneTodos;
+  const currentTodosArr = (whichTab === "unDone" ? unDoneTodos : doneTodos)
 
   todosContainer.innerHTML = "";
 
-  currentTodosArr.forEach((todo) => {
-    console.log(todo);
+  currentTodosArr.forEach((todo, index) => {
     const todoContainer = document.createElement("div");
     const title = document.createElement("span");
     const actionButtonsContainer = document.createElement("div");
@@ -31,8 +30,7 @@ const renderTodos = (whichTab) => {
     if (whichTab === "unDone") {
       doneBtn.innerText = "DONE";
       doneBtn.addEventListener("click", (e) => {
-        const todoIndex = currentTodosArr.findIndex((td) => td.id === todo.id);
-        const completedTodo = currentTodosArr.splice(todoIndex, 1);
+        const completedTodo = currentTodosArr.splice(index, 1);
         doneTodos.push(completedTodo[0]);
         renderTodos("unDone");
       });
@@ -44,8 +42,7 @@ const renderTodos = (whichTab) => {
     todoContainer.classList.add("todo-container");
 
     removeBtn.addEventListener("click", () => {
-      const todoIndex = currentTodosArr.findIndex((td) => td.id === todo.id);
-      currentTodosArr.splice(todoIndex, 1);
+      currentTodosArr.splice(index, 1);
       todoContainer.parentElement.removeChild(todoContainer);
     });
 
@@ -61,13 +58,11 @@ const renderTodos = (whichTab) => {
 
 todoInput.addEventListener("keyup", (e) => {
   if (e.code === "Enter") {
-    console.log("check");
     if (!todoInput.value) {
       return;
     }
     const newTodo = { title: todoInput.value, id: Date.now() };
     unDoneTodos.push(newTodo);
-    console.log(unDoneTodos);
     renderTodos("unDone");
     todoInput.value = "";
   }
