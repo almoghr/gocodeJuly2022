@@ -1,0 +1,16 @@
+body{
+    background-color: pink;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 1s ;
+}
+
+.todo-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
