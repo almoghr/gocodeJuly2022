@@ -1,9 +1,18 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Button from './components/Button'
+import Container1 from './components/Container1';
+import { useClock } from './customHooks/useClock';
+import MyContext from './MyContext';
 
 const App = () => {
-    const refContainer = useRef(null);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
+    const toggleDarkMode = () => {
+      setIsDarkMode(!isDarkMode);
+    };
+  
+    const refContainer = useRef(null);
+    const clock = useClock()
     const [count, setCount] = useState(0)    
     const [showButton, setShowButton] = useState(true)
     const [storeData, setStoreData] = useState([])
@@ -64,20 +73,26 @@ const App = () => {
             return () => {console.log('collapsed')}
         },[show])
   return (
-    <div>
-        {/* <input value={val} ref={refContainer} placeholder='mendy hatotah'onChange={(e) => setVal(e.target.value)}/> */}
-        <input value={fullName.firstName} placeholder='firstName' onChange={(e) => setFullName({firstName: e.target.value, lastName:fullName.lastName})}/>
-        <input value={fullName.lastName} placeholder='lastName' onChange={(e) => setFullName({firstName:fullName.firstName, lastName: e.target.value})}/>
-
-        <Button text={"+"} onClickHandler={handleCounterPlus} />
-        <span>{count}</span>
-        <Button text={"-"} onClickHandler={handleCounterMinus} />
-        <Button text={showButton ? "hide me!!!" : "reveal me!!!!"} onClickHandler={toggleShowButton}/>
-        {showButton && <span>רואה ואינו נראה</span>}
-        {storeData ? storeData.map((element,index) => <div key={index}><span>{element.title}</span></div>) : 'no storeData found'}
-        {show && <Button text={"show"} onClickHandler={() => setShow(!show)}/> }
-        <button onClick={()=>{console.log(refContainer); refContainer.current.focus(); refContainer.current.value='almog'; refContainer.current.style.background = 'red';}}>click me pleaseee</button>
-    </div>
+    <MyContext.Provider value={{toggleDarkMode, toggleShowButton ,handleCounterPlus, handleCounterMinus}}>
+        <div style={isDarkMode ? { background: "black", color: "white" } : {}}>
+            {/* <input value={val} ref={refContainer} placeholder='mendy hatotah'onChange={(e) => setVal(e.target.value)}/> */}
+            <input value={fullName.firstName} placeholder='firstName' onChange={(e) => setFullName({firstName: e.target.value, lastName:fullName.lastName})}/>
+            <input value={fullName.lastName} placeholder='lastName' onChange={(e) => setFullName({firstName:fullName.firstName, lastName: e.target.value})}/>
+            <button onClick={toggleDarkMode}>{clock}</button>
+            <Button text={"+"} onClickHandler={handleCounterPlus} />
+            <span>{count}</span>
+            <Button text={"-"} onClickHandler={handleCounterMinus} />
+            <Button text={showButton ? "hide me!!!" : "reveal me!!!!"} onClickHandler={toggleShowButton}/>
+            {showButton && <span>רואה ואינו נראה</span>}
+            {storeData ? storeData.map((element,index) => <div key={index}><span>{element.title}</span></div>) : 'no storeData found'}
+            {show && <Button text={"show"} onClickHandler={() => setShow(!show)}/> }
+            <button onClick={()=>{console.log(refContainer); refContainer.current.focus(); refContainer.current.value='almog'; refContainer.current.style.background = 'red';}}>click me pleaseee</button>
+            <h2>{clock}</h2>
+            <div style={{height:'1000px', width: '1000px', border:'4px solid gold'}}>
+                <Container1 />
+            </div>
+        </div>
+    </MyContext.Provider>
   )
 }
 
