@@ -50,7 +50,7 @@ const Routing = () => {
     setFilteredProducts(filteredItems);
   };
 
-  const [isAdmin, setIsAdmin] = useState(false);
+  const isAdmin = false
   return (
     <MyContext.Provider
       value={{ listOpject, filterProductsByCategory, filteredProducts, cart }}
