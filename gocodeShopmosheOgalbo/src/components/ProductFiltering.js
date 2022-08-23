@@ -6,7 +6,7 @@ const ProductFiltering = () => {
 
     const {listOpject, filterProductsByCategory} = useContext(MyContext)
 
-   const categories = listOpject.map(p => p.category).filter((value, index, array) => array.indexOf(value) === index)
+   const categories = listOpject?.map(p => p.category).filter((value, index, array) => array.indexOf(value) === index)
 
    return (
         <div className="collection-sort">

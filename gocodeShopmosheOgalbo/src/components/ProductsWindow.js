@@ -8,7 +8,7 @@ const ProductsWindow = ({AddProductToCart}) => {
 
     const { listOpject, filteredProducts } = useContext(MyContext);
 
-//פונקציה הוסף לסל 
+
     const customList = filteredProducts.length > 0 ? filteredProducts : listOpject
     
     const productListDisplay = customList.map((element, index) => (
@@ -23,13 +23,13 @@ const ProductsWindow = ({AddProductToCart}) => {
     ));
 
     if(!listOpject && !filteredProducts){
-        return <section className='loader'>{ }</section>
+        return <section className='loader'>{}</section>
     }
 
 
     return (
         <>
-                 <section className="products">{productListDisplay}</section>
+            <section className="products">{productListDisplay}</section>
         </>
 
     )
