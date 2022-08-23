@@ -5,6 +5,7 @@ import About from "./About";
 import Cart from "./Cart";
 import NotFound from "./NotFound";
 import MyContext from "../MyContext";
+import Admin from "./Admin";
 
 const Routing = () => {
     let isLoggedIn = true
@@ -18,6 +19,7 @@ const Routing = () => {
     const data = await response.json();
     setListOpject(data);
   };
+  const categories = listOpject?.map(p => p.category).filter((value, index, array) => array.indexOf(value) === index)
 
   useEffect(() => {
     getProductsApi();
@@ -39,6 +41,10 @@ const Routing = () => {
     console.log(cart);
   }, [cart]);
 
+  useEffect(() => {
+    console.log(listOpject);
+  }, [listOpject]);
+
   const filterProductsByCategory = (category) => {
     if (category === "/") {
       setFilteredProducts(listOpject);
@@ -50,10 +56,10 @@ const Routing = () => {
     setFilteredProducts(filteredItems);
   };
 
-  const isAdmin = false
+  const isAdmin = true
   return (
     <MyContext.Provider
-      value={{ listOpject, filterProductsByCategory, filteredProducts, cart }}
+      value={{ listOpject, filterProductsByCategory, filteredProducts, cart, categories }}
     >
       <BrowserRouter>
         <Link to="/"> home </Link>
@@ -65,7 +71,7 @@ const Routing = () => {
           <Route path="/" element={<App AddProductToCart={AddProductToCart} />}/>
           <Route path="about" element={<About />} />
           <Route path="cart" element={<Cart />} />
-          <Route path="admin" element={<Cart />} />
+          <Route path="admin" element={<Admin setListOpject={setListOpject} categories={categories}/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         ) :

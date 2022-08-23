@@ -4,16 +4,16 @@ import './ProductFiltering.css'
 
 const ProductFiltering = () => {
 
-    const {listOpject, filterProductsByCategory} = useContext(MyContext)
+    const {filterProductsByCategory, categories} = useContext(MyContext)
 
-   const categories = listOpject?.map(p => p.category).filter((value, index, array) => array.indexOf(value) === index)
 
-   return (
+
+    return (
         <div className="collection-sort">
             <label>Filter by:</label>
             <select onChange={(e) => filterProductsByCategory(e.target.value)}>
                 <option value="/">All Products</option>
-                {categories && categories.map(category => <option value={category}>{category}</option>)}
+                {categories && categories.map((category, index) => <option key={index} value={category}>{category}</option>)}
             </select>
         </div>)
 }
