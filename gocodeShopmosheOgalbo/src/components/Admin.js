@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './Admin.css';
-
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
 
 const Admin = ({setListOpject, categories}) => {
 
@@ -53,10 +54,12 @@ const handleSubmitProductAdding = () => {
 
   return (
     <div className="AdminPageContainer">
+        <Tooltip title="dont forget: more than 3 letters and less then 30" arrow placement='right' followCursor>
         <div className={"InputWrapper"}>
             <label>title:</label>
             <input value={title} placeholder='enter your new product title' onChange={(e) => {setTitle(e.target.value)}}/>
         </div>
+        </Tooltip>
         <div className={"InputWrapper"}>
             <label>description:</label>
             <input value={description} placeholder='enter your new product description' onChange={(e) => {setDescription(e.target.value)}}/>
@@ -77,7 +80,7 @@ const handleSubmitProductAdding = () => {
         </select>
         </div>
             <div>
-            <button onClick={handleSubmitProductAdding}>SUBMIT</button>
+            <Button variant="contained" color={error.length > 0 ? "error" : "primary"} onClick={handleSubmitProductAdding}>{error.length > 0 ? "Error found please fix" : "SUBMIT"}</Button>
             </div>
         {error.length > 0 && error.map((err, index) => <div key={index}>{err}</div>)}
     </div>

@@ -6,6 +6,7 @@ import Cart from "./Cart";
 import NotFound from "./NotFound";
 import MyContext from "../MyContext";
 import Admin from "./Admin";
+import SearchField from "./SearchField";
 
 const Routing = () => {
     let isLoggedIn = true
@@ -65,6 +66,7 @@ const Routing = () => {
         <Link to="/"> home </Link>
         <Link to="/about"> about </Link>
         <Link to="/cart"> cart </Link>
+
         {isAdmin && <Link to="/admin">admin</Link>}
         {isLoggedIn ? (
         <Routes>
