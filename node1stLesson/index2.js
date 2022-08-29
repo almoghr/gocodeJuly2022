@@ -18,7 +18,7 @@ const newProduct = {
 	if (err) throw err; 
  
 	console.log("Done writing"); // Success 
-});
+})
 
 // fs.writeFile("./check.js", 'console.log(js)', (err) => { 
  

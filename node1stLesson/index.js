@@ -6,13 +6,12 @@ const makeASummary = () => {
         if(process.argv[2] === 'plus'){
             sum += parseInt(process.argv[i])
         }
-        if(process.argv[2] === 'minus'){
+        else if(process.argv[2] === 'minus'){
             sum -= parseInt(process.argv[i])
         }
-        if(process.argv[2] === 'kefel'){
+        else if(process.argv[2] === 'kefel'){
             sum *= parseInt(process.argv[i])
         }
-        
     }
     return sum
 }
