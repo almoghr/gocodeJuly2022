@@ -1,6 +1,19 @@
-const http = require("http");
-// console.log(process.argv)
+// const http = require("http");
+const express = require('express')
+const app = express()
 
+app.get('/', (req,res) => {
+    res.send(JSON.stringify({name:'almog', age:25, occupation:"FS Developer", anotherOccupation:"instructor"}))
+})
+
+app.get('/evyatar', (req,res) => {
+    res.send(JSON.stringify({name:"evyatar"}))
+})
+
+app.listen(8000, () => {
+ console.log('Server running at http://127.0.0.1:8000/');
+})
+// console.log(process.argv)
 // const makeASummary = () => {
 //     let sum = 1
 //     for(let i = 3; i < process.argv.length; i++){
@@ -9,8 +22,8 @@ const http = require("http");
 //         }
 //         else if(process.argv[2] === 'minus'){
 //             sum -= parseInt(process.argv[i])
-//         }
 //         else if(process.argv[2] === 'kefel'){
+    //         }
 //             sum *= parseInt(process.argv[i])
 //         }
 //     }
@@ -24,14 +37,14 @@ const http = require("http");
 // Load HTTP module
 
 // Create HTTP server and listen on port 8000 for requests
-http.createServer((request, response) => {
+// http.createServer((request, response) => {
 
-   // Set the response HTTP header with HTTP status and Content type
-   response.writeHead(200, {'Content-Type': 'text/plain'});
+//    // Set the response HTTP header with HTTP status and Content type
+//    response.writeHead(200, {'Content-Type': 'text/plain'});
 
-   // Send the response body "Hello World"
-   response.end('Hello World\n');
-}).listen(8000);
+//    // Send the response body "Hello World"
+//    response.end('Hello World\n');
+// }).listen(8000);
 
-// Print URL for accessing server
-console.log('Server running at http://127.0.0.1:8000/');
+// // Print URL for accessing server
+// console.log('Server running at http://127.0.0.1:8000/');
