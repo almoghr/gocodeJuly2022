@@ -118,6 +118,21 @@ app.get("*", (req,res) => {
     res.sendFile(__dirname + "/client/build/index.html")
 })
 
+
+
+// const { DB_USER, DB_PASS, DB_HOST, DB_NAME } = process.env;
+
+// mongoose.connect(
+//   `mongodb+srv://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`,
+//   { useNewUrlParser: true, useUnifiedTopology: true },
+//   (err) => {
+//     app.listen(process.env.PORT || 8000, () => {
+//       console.log("err", err);
+//       console.log("Ani maazin!");
+//     });
+//   }
+// );
+
 mongoose.connect('mongodb://localhost:27017/test',{useNewUrlParser: true, useUnifiedTopology: true});
 
 app.listen(8000, () => {
