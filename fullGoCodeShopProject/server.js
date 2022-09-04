@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const { productAllowedUpdates } = require('./constants/allowedUpdates')
 const serverResponse = require('./utils/serverResponse')
 const app = express()
@@ -7,7 +8,8 @@ const app = express()
 require("dotenv").config()
 
 app.use(express.json())
-//app.use(express.static("client/build"))
+app.use(express.static("client/build"))
+app.use(cors())
 
 //MODEL
 const productSchema = new mongoose.Schema({

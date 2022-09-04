@@ -1,0 +1,19 @@
+.AdminPageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.InputWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.InputWrapper > label{
+    margin: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}

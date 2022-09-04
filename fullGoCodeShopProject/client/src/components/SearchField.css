@@ -1,0 +1,19 @@
+.product-filter {
+    flex-direction: column;
+}
+
+/* Product Layout */
+
+.product-filter {
+    display: flex;
+    padding: 30px 0;
+}
+
+.sort {
+    align-self: flex-start;
+}
+
+.sort {
+    display: flex;
+    align-self: flex-end;
+}
